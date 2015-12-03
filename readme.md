@@ -1,4 +1,4 @@
-#Ajax Autocomplete for jQuery
+#Ajax Autocomplete for jQuery (no $.autocomplete alias)
 
 Ajax Autocomplete for jQuery allows you to easily create
 autocomplete/autosuggest boxes for text input fields.

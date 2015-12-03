@@ -127,8 +127,13 @@
     $.Autocomplete = Autocomplete;
 
     Autocomplete.formatResult = function (suggestion, currentValue) {
-        var pattern = '(' + utils.escapeRegExChars(currentValue) + ')';
+        // Do not replace anything if there current value is empty
+        if (!currentValue) {
+            return suggestion.value;
+        }
         
+        var pattern = '(' + utils.escapeRegExChars(currentValue) + ')';
+
         return suggestion.value
             .replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>')
             .replace(/&/g, '&amp;')
@@ -208,8 +213,10 @@
 
         onFocus: function () {
             var that = this;
+
             that.fixPosition();
-            if (that.options.minChars === 0 && that.el.val().length === 0) {
+
+            if (that.el.val().length >= that.options.minChars) {
                 that.onValueChange();
             }
         },
@@ -950,7 +957,7 @@
     };
 
     // Create chainable jQuery plugin:
-    $.fn.autocomplete = $.fn.devbridgeAutocomplete = function (options, args) {
+    $.fn.devbridgeAutocomplete = function (options, args) {
         var dataKey = 'autocomplete';
         // If function invoked without argument return
         // instance of the first matched element:
