@@ -1,6 +1,6 @@
 {
   "name": "mjames-autocomplete",
-  "version": "1.2.24",
+  "version": "2.0.0",
   "description": "Autocomplete provides suggestions while you type into the text field. My version does NOT alias $.autocomplete for safety",
   "homepage": "https://github.com/majames/jQuery-Autocomplete",
   "author": "Michael James (https://twitter.com/bigdatamj)",
