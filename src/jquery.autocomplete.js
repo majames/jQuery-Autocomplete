@@ -14,10 +14,10 @@
     'use strict';
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
+        define(['@atlassian/experiment-common-core/lib/jquery'], factory);
     } else if (typeof exports === 'object' && typeof require === 'function') {
         // Browserify
-        factory(require('jquery'));
+        factory(require('@atlassian/experiment-common-core/lib/jquery'));
     } else {
         // Browser globals
         factory(jQuery);
