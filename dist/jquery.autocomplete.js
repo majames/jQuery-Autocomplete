@@ -1,5 +1,5 @@
 /**
-*  Ajax Autocomplete for jQuery, version 1.2.24
+*  Ajax Autocomplete for jQuery, version 2.1.0
 *  (c) 2015 Tomas Kirda
 *
 *  Ajax Autocomplete for jQuery is freely distributable under the terms of an MIT-style license.
@@ -14,10 +14,10 @@
     'use strict';
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
+        define(['@atlassian/experiment-common-core/lib/jquery'], factory);
     } else if (typeof exports === 'object' && typeof require === 'function') {
         // Browserify
-        factory(require('jquery'));
+        factory(require('@atlassian/experiment-common-core/lib/jquery'));
     } else {
         // Browser globals
         factory(jQuery);
